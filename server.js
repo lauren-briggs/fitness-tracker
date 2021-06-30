@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost/workout', {
     useUnifiedTopology: true,
 });
 
-// app.use(require("./routes/api.js"));
+app.use(require("./routes/api.js"));
 app.use(require("./routes/html.js"));
 
 app.listen(3001, () => {
