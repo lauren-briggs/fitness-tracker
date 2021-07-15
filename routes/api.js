@@ -5,6 +5,7 @@ const db = require("../models");
 
 router.get("/api/workouts", (req, res) => {
     db.find().then((dbData) => {
+        console.log(dbData)
         res.json(dbData);
     }).catch((err) => {
         res.json(err);
