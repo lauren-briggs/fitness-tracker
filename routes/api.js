@@ -39,11 +39,10 @@ router.post("/api/workouts", (req, res) => {
     }).catch((err) => {
         res.json(err);
     });
-});
+}); z
 
 
 router.get("/admin/seed", (req, res) => {
-
     const workoutSeed = [
         {
             day: new Date(new Date().setDate(new Date().getDate() - 9)),

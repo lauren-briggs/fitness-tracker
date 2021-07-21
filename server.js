@@ -7,6 +7,8 @@ const databaseUrl = "workout";
 const collections = ["worksouts"];
 const db = mongojs(databaseUrl, collections)
 
+const uri = process.env.MONGODB_URI;
+
 const app = express();
 
 app.use(logger("dev"));

@@ -18,10 +18,34 @@ function calculateTotalWeight(data) {
 function populateChart(data) {
   console.log("populate chart")
   console.log(data)
-  const durations = data.map((duration) => duration);
+  // const durations = data.map((duration) => duration);
   const pounds = calculateTotalWeight(data);
-  console.log(durations)
+  // console.log(durations)
   console.log(pounds)
+
+  let durations = [];
+
+  data.map(workout => {
+    workout.exercises.map(exercise => {
+      durations.push(exercise.duration);
+    });
+  });
+
+  // let durations = data.reduce((acc1, workout) => acc1 + workout.exercises)
+
+  // let totalDuration = data.reduce((acc2, exercise) => acc2 + exercise.duration,)
+
+  // let totalDuration = data.reduce(
+  //   (acc1, workout) => acc1 + workout.exercises.reduce(    // (2)
+  //       (acc2, exercise) => acc2 + exercise.duration, 0),  // (1)
+  //   0)
+
+  // console.log(totalDuration)
+
+  // console.log(totalDuration)
+
+  console.log(durations)
+
 
   const line = document.querySelector('#canvas').getContext('2d');
   const bar = document.querySelector('#canvas2').getContext('2d');
@@ -110,6 +134,8 @@ function populateChart(data) {
     },
   });
 }
+
+
 
 // get all workout data from back-end
 API.getWorkoutsInRange().then(populateChart);
