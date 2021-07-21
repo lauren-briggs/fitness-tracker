@@ -7,8 +7,6 @@ const databaseUrl = "workout";
 const collections = ["worksouts"];
 const db = mongojs(databaseUrl, collections)
 
-// const uri = process.env.MONGODB_URI;
-
 const app = express();
 
 app.use(logger("dev"));
@@ -20,7 +18,7 @@ db.on("error", error => {
     console.log("database error:", error);
 });
 
-mongoose.connect('mongodb://localhost/workout', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
