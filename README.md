@@ -17,3 +17,11 @@ A workout tracker with provided front end code. Using Mongo database with a Mong
 
 A consumer will reach their fitness goals more quickly when they track their workout progress.
 
+## Technologies Used
+
+- Express
+- Node.js
+- MongoDB
+- Mongoose
+- Heroku
+- MongoDB Atlas
