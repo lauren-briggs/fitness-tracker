@@ -39,7 +39,7 @@ router.post("/api/workouts", (req, res) => {
     }).catch((err) => {
         res.json(err);
     });
-}); z
+});
 
 
 router.get("/admin/seed", (req, res) => {
